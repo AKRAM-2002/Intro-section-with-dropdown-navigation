@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&display=swap');
+
+body {
+    margin: 0;
+    overflow-y: hidden;
+    font-family: 'Epilogue';
+    padding: 10px;   
+}
+
+.container {
+    max-width: 1440px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+header .logo {
+    position: relative;
+    width: 200px;
+    left: -140px;
+    top: 14px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    margin-left: -550px;
+    font-size: 15px;
+}
+
+ul.sponsors{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: flex-start;
+    position: relative;
+    top:  50px;
+    left: -50px;
+}
+
+ul.sponsors li img{
+    width: 100px;
+    margin-left: 20px;
+}
+
+ul.sponsors li:nth-child(2) img{
+    width: 60px;
+}
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+    gap: 20rem;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.left-section, .right-section {
+    position: relative;
+}
+
+.left-section {
+    left: 150px;
+}
+
+.right-section {
+    right: 20px;
+}
+
+.left-section p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4rem;
+    margin-bottom: 20px;
+    text-align: left;
+    color: hsl(0, 0%, 41%);
+}
+
+.hero-section img {
+    width: 350px;
+    height: auto;
+}
+
+.hero-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4rem;
+}
+
+.hero-title h1 {
+    white-space: nowrap;
+}
+
+.hero-title .first-word {
+    display: block; 
+    margin-bottom: 0.5em; 
+}
+
+.buttons {
+    display: flex;
+    position: relative;
+    right: -130px;
+}
+
+.login-btn, .register-btn{
+    gap: 10px;
+    padding: 0px 30px;
+    border-radius: 10px;
+    color: hsl(0, 0%, 41%);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.login-btn {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-size: 14px;
+}
+
+.register-btn {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid hsl(0, 0%, 8%);
+    border-radius: 14px;
+    font-size: 14px;
+}
+
+.learn-more-btn {
+    border: 1px solid #000;
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.learn-more-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+}
