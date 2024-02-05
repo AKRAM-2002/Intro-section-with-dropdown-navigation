@@ -18,6 +18,32 @@
 </head>
 <body>
 
+  <script>
+  
+
+    // JavaScript to handle hover events and toggle sub-list visibility
+    document.getElementById('features').addEventListener('mouseover', function() {
+      document.querySelector('#features .sub-list').style.display = 'block';
+    });
+    function displayFeatures(){
+      document.querySelector('#features .sub-list').style.display = 'block';
+    }
+    
+
+
+    document.getElementById('features').addEventListener('mouseout', function() {
+      document.querySelector('#features .sub-list').style.display = 'none';
+    });
+
+    document.getElementById('company').addEventListener('mouseover', function() {
+      document.querySelector('#company .sub-list').style.display = 'block';
+    });
+
+    document.getElementById('company').addEventListener('mouseout', function() {
+      document.querySelector('#company .sub-list').style.display = 'none';
+    });
+  </script>
+
 
   <div class="container">
 
@@ -27,10 +53,29 @@
       </div>
       <nav>
         <ul>
-          <li>Features</li>
-          <li>Company</li>
-          <li>Careers</li>
-          <li>About</li>
+          <li class="active" id="features" onmouseenter="displayFeatures()">
+            Features
+            <ul class="sub-list1">
+              <li>Todo List</li>
+              <li>Calendar</li>
+              <li>Reminders</li>
+              <li>Planning</li>
+            </ul>
+          </li>
+          <li id="company"  onmouseenter="onCompanyHover()" >
+            Company
+            <ul class="sub-list2">
+              <li>History</li>
+              <li>Our Team</li>
+              <li>Blog</li>
+            </ul>
+          </li>
+          <li>
+            Careers
+          </li>
+          <li>
+            About
+          </li>
         </ul>
       </nav>
       <div class="buttons">

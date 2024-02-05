@@ -13,7 +13,16 @@ body {
 
 ul {
     list-style: none;
-    padding-left: 30px;
+    color:  hsl(0, 0%, 41%);
+    
+}
+ul li:hover{
+    cursor: pointer;
+    color: hsl(0, 0%, 8%);
+}
+
+ul li.active{
+    color: hsl(0, 0%, 8%);
 }
 
 header {
@@ -30,9 +39,33 @@ header .logo {
 
 header nav ul {
     display: flex;
-    justify-content: space-around;
     margin-left: -550px;
     font-size: 15px;
+}
+header nav ul li{
+    padding-right: 10px;
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+header nav  ul.sub-list1,
+header nav ul.sub-list2
+{
+   display: none;
+   position: relative;
+   top: 40px;
+}
+ul.sub-list1 li{
+    font-weight: 600;
+    font-size: 15px;
+    
+}
+
+header nav ul #features::after,
+header nav ul #company::after
+{
+    content: url(./images/icon-arrow-down.svg);
+    
 }
 
 ul.sponsors{
@@ -91,7 +124,7 @@ ul.sponsors li:nth-child(2) img{
 }
 
 .hero-title {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
     line-height: 1.4rem;
 }
@@ -112,15 +145,17 @@ ul.sponsors li:nth-child(2) img{
 }
 
 .login-btn, .register-btn{
-    gap: 10px;
-    padding: 0px 30px;
+    padding: 0px 20px;
     border-radius: 10px;
     color: hsl(0, 0%, 41%);
     font-size: 0.8rem;
     font-weight: 500;
-    line-height: 1rem;
     cursor: pointer;
     letter-spacing: 1px;
+}
+
+.login-btn:hover, .register-btn:hover{
+    color: hsl(0, 0%, 8%);
 }
 
 .login-btn {
@@ -140,10 +175,11 @@ ul.sponsors li:nth-child(2) img{
     border: 1px solid #000;
     background-color: #000000;
     color: #ffffff;
-    font-weight: 700;
-    padding: 10px 25px;
+    font-weight: 600;
+    padding: 12px 35px;
     border-radius: 10px;
     font-size: 14px;
+    font-family: 'Epilogue';
 }
 
 .learn-more-btn:hover {
@@ -154,10 +190,22 @@ ul.sponsors li:nth-child(2) img{
 .attribution {
     font-size: 11px;
     text-align: center;
-    margin-top: 40px;
+    position: relative;
+    top: 40px;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
     text-decoration: none;
+}
+
+
+.hidden{
+    display: none;
+}
+
+@media screen and (max-width: 375px) {
+    header nav{
+        display: none;  
+    }
 }
