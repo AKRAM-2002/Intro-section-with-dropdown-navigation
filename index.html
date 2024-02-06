@@ -29,7 +29,13 @@
       <div class="logo">
         <img src="./images/logo.svg" alt="logo image">
       </div>
-      <nav>
+      <div class="menu-icon" onclick="toggleMenu()">
+        
+    </div>
+      <div class="close-icon" onclick="toggleMenu()">
+    </div>
+
+      <nav class="nav-mobile">
         <ul>
           <li class="active dropdown" id="features" >
             Features
@@ -94,7 +100,8 @@
         </ul>
       </div>
       <div class="right-section">
-        <img class="hero-img" src="./images/image-hero-desktop.png" alt="illustration image">
+        <img class="hero-img" id="desktopImage" src="./images/image-hero-desktop.png" alt="desktop illustration image">
+        <img class="hero-img" id="mobileImage" src="./images/image-hero-mobile.png" alt="mobile illustration image">
       </div>
     </div>
   </div>

@@ -2,9 +2,10 @@
 
 body {
     margin: 0;
-    overflow-y: hidden;
     font-family: 'Epilogue';
     padding: 10px;   
+    overflow-x: hidden;
+    background-color: hsl(0, 0%, 98%);
 }
 
 .container {
@@ -133,6 +134,8 @@ header nav ul #company:hover::after
     
 }
 
+/** Hero section **/
+
 ul.sponsors{
     display: flex;
     flex-direction: row;
@@ -187,7 +190,9 @@ ul.sponsors li:nth-child(2) img{
     width: 350px;
     height: auto;
 }
-
+.hero-section #mobileImage{
+    width: 120%;
+}
 .hero-title {
     font-size: 36px;
     font-weight: 700;
@@ -201,6 +206,10 @@ ul.sponsors li:nth-child(2) img{
 .hero-title .first-word {
     display: block; 
     margin-bottom: 0.5em; 
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 .buttons {
@@ -217,6 +226,7 @@ ul.sponsors li:nth-child(2) img{
     font-weight: 500;
     cursor: pointer;
     letter-spacing: 1px;
+    background-color: hsl(0, 0%, 98%);
 
 }
 
@@ -225,13 +235,12 @@ ul.sponsors li:nth-child(2) img{
 }
 
 .login-btn {
-    background-color: rgb(255, 255, 255);
     border: none;
     font-size: 14px;
 }
 
 .register-btn {
-    background-color: rgb(255, 255, 255);
+    
     border: 1px solid hsl(0, 0%, 8%);
     border-radius: 14px;
     font-size: 14px;
@@ -249,7 +258,7 @@ ul.sponsors li:nth-child(2) img{
 }
 
 .learn-more-btn:hover {
-    background-color: #ffffff;
+    background-color: hsl(0, 0%, 98%);
     color: #000000;
 }
 
@@ -270,8 +279,161 @@ ul.sponsors li:nth-child(2) img{
     display: none;
 }
 
-@media screen and (max-width: 375px) {
-    header nav{
-        display: none;  
+.menu-icon,
+.close-icon 
+{
+    display: none; /* Hide the menu icon on larger screens */
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+
     }
+    
+    header .logo{
+        width: 200px;
+        top: 2px;  
+        position: static;
+        margin-left: -150px;
+        
+    }
+
+    .menu-icon {
+        content: url("./images/icon-menu.svg");
+        display: block; /* Show the menu icon on smaller screens */
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+    }
+     .close-icon{
+        content: url("./images/icon-close-menu.svg");
+        display: block; /* Show the menu icon on smaller screens */
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+    }
+    header nav ul, .buttons {
+        display: none;
+    }
+    header.active::before {
+        content: "";
+        display: inline-block;
+        position: fixed;
+        background-color: rgba(6, 6, 6, 0.15);
+        backdrop-filter: blur(3px);
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    .nav-mobile{
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: left;
+        margin-top: 3rem;
+    }
+    
+    .hero-section{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-items: center;
+        margin: auto;
+    }
+    /** Hero section **/
+
+ul.sponsors{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    top:  10px;
+    left: -50px;
+}
+
+ul.sponsors li img{
+    width: 100px;
+    margin-left: 20px;
+}
+
+ul.sponsors li:nth-child(2) img{
+    width: 60px;
+}
+
+.hero-section {
+    
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    gap: 4rem;
+    
+}
+
+.left-section, .right-section {
+    position: static;
+    margin: auto;
+    top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.left-section p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: hsl(0, 0%, 41%);
+    width: 80%;
+}
+
+
+
+.hero-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4rem;
+}
+
+.hero-title h1 {
+    white-space:unset;
+    font-size: 48px;
+    text-align: center;
+}
+
+.hero-title .first-word {
+    display: inline; 
+    margin-bottom: 0.5em; 
+}
+    
+}
+@media screen and (max-width: 768px) {
+    
+    header .logo{
+        width: 200px;
+        top: 2px;  
+        position: static;
+        margin-left: -80px;
+        
+    }
+    .hero-title h1 {
+        white-space:unset;
+        font-size: 46px;
+        text-align: center;
+    }
+    
 }
