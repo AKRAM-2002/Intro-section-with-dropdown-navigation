@@ -18,30 +18,8 @@
 </head>
 <body>
 
-  <script>
+  <script src="index.js">
   
-
-    // JavaScript to handle hover events and toggle sub-list visibility
-    document.getElementById('features').addEventListener('mouseover', function() {
-      document.querySelector('#features .sub-list').style.display = 'block';
-    });
-    function displayFeatures(){
-      document.querySelector('#features .sub-list').style.display = 'block';
-    }
-    
-
-
-    document.getElementById('features').addEventListener('mouseout', function() {
-      document.querySelector('#features .sub-list').style.display = 'none';
-    });
-
-    document.getElementById('company').addEventListener('mouseover', function() {
-      document.querySelector('#company .sub-list').style.display = 'block';
-    });
-
-    document.getElementById('company').addEventListener('mouseout', function() {
-      document.querySelector('#company .sub-list').style.display = 'none';
-    });
   </script>
 
 
@@ -53,18 +31,18 @@
       </div>
       <nav>
         <ul>
-          <li class="active" id="features" onmouseenter="displayFeatures()">
+          <li class="active dropdown" id="features" >
             Features
-            <ul class="sub-list1">
+            <ul class="features-sublist" id="">
               <li>Todo List</li>
               <li>Calendar</li>
               <li>Reminders</li>
               <li>Planning</li>
             </ul>
           </li>
-          <li id="company"  onmouseenter="onCompanyHover()" >
+          <li class="dropdown" id="company" >
             Company
-            <ul class="sub-list2">
+            <ul class="company-sublist" id="">
               <li>History</li>
               <li>Our Team</li>
               <li>Blog</li>
