@@ -16,6 +16,29 @@ function updateImage() {
 window.addEventListener('load', updateImage);
 window.addEventListener('resize', updateImage);
 
+function toggleMenu() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const mobileNav = document.querySelector('.nav-mobile');
+    const header = document.querySelector('header');
+
+    menuIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+    mobileNav.classList.add('active');
+    header.classList.add('active');
+
+   
+
+    closeIcon.onclick = function () {
+        menuIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+        mobileNav.classList.remove('active');
+        header.classList.remove('active');
+    };
+}
+
+
+/*
 
 function toggleMenu() {
 
@@ -39,4 +62,4 @@ function toggleMenu() {
     buttons.style.display = (buttons.style.display === 'none' || buttons.style.display === '') ? 'flex' : 'none';
 }
 
-
+*/

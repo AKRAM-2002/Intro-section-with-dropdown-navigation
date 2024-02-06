@@ -3,9 +3,13 @@
 body {
     margin: 0;
     font-family: 'Epilogue';
-    padding: 10px;   
-    overflow-x: hidden;
+    padding: 0px;   
+    margin: 0;
     background-color: hsl(0, 0%, 98%);
+    overflow-y: hidden;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    
+    height: 100%;
 }
 
 .container {
@@ -29,6 +33,7 @@ ul li.active{
 header {
     display: flex;
     justify-content: space-around;
+    padding: 10px;
 }
 
 header .logo {
@@ -111,8 +116,6 @@ header nav ul #company::after
 {
     content: url(./images/icon-todo.svg);
     width: 20px;
-
-    
 }
 .dropdown .features-sublist li:nth-child(2):before{
     content: url(./images/icon-calendar.svg);
@@ -223,10 +226,11 @@ button:hover{
     border-radius: 10px;
     color: hsl(0, 0%, 41%);
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     letter-spacing: 1px;
     background-color: hsl(0, 0%, 98%);
+    font-family: 'Epilogue';
 
 }
 
@@ -302,8 +306,6 @@ button:hover{
     header .logo{
         width: 200px;
         top: 2px;  
-        position: static;
-        margin-left: -150px;
         
     }
 
@@ -312,14 +314,14 @@ button:hover{
         display: block; /* Show the menu icon on smaller screens */
         cursor: pointer;
         position: absolute;
-        right: 20px;
+        right: 10px;
     }
      .close-icon{
         content: url("./images/icon-close-menu.svg");
-        display: block; /* Show the menu icon on smaller screens */
+        display: none; /* Show the menu icon on smaller screens */
         cursor: pointer;
         position: absolute;
-        right: 20px;
+        right: 10px;
     }
     header nav ul, .buttons {
         display: none;
@@ -336,12 +338,30 @@ button:hover{
         left: 0;
     }
     .nav-mobile{
-        position: static;
+        position: fixed;
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-end; 
+        margin-top: 3rem;
+        right: 1rem;
+        background-color: hsl(0, 0%, 98%); /* Adjust background color as needed */
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .nav-mobile ul {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        align-items: left;
-        margin-top: 3rem;
+        align-items: flex-end; /* Align items to the end (right) of the container */
+    }
+
+    .nav-mobile li {
+        display: block;
+        text-align: right; /* Align text to the right */
     }
     
     .hero-section{
@@ -356,11 +376,11 @@ button:hover{
 ul.sponsors{
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     position: relative;
-    top:  10px;
-    left: -50px;
+    top:  20px;
+    
 }
 
 ul.sponsors li img{
@@ -422,18 +442,54 @@ ul.sponsors li:nth-child(2) img{
     
 }
 @media screen and (max-width: 768px) {
+
+    body{
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none; /* for Internet Explorer, Edge */
+        scrollbar-width: none; /* for Firefox */
+        overflow-y: scroll;
+        -webkit-font-smoothing: antialiased;
+    
+    
+    }
     
     header .logo{
-        width: 200px;
+        width: 600px;
         top: 2px;  
-        position: static;
-        margin-left: -80px;
+        position: relative;
+        left: 20px;
         
     }
     .hero-title h1 {
-        white-space:unset;
-        font-size: 46px;
+        font-size: 48px;
         text-align: center;
+        line-height: 2.9rem;
+    }
+
+    
+
+    
+    ul.sponsors li img{
+        width: 90px;
+        margin-left: 20px;
+    }
+
+    ul.sponsors li:nth-child(2) img{
+        width: 60px;
     }
     
+}
+
+
+@media screen and (max-width: 480px){
+
+    header .logo{
+        width: 100px;
+        top: 2px;  
+        position: relative;
+        left: -80px; 
+    }
+
 }
