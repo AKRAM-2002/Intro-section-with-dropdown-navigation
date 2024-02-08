@@ -555,13 +555,4 @@ ul.sponsors li:nth-child(2) img{
 
 }
 
-@media screen and (max-width: 375px){
 
-    header .logo{
-        width: 100px;
-        top: 2px;  
-        position: relative;
-        left:  -160px; 
-    }
-
-}
